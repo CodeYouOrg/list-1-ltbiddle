@@ -14,9 +14,13 @@
 # Note: python does not have a ++ operator, but += works.
 
 def match_ends(words):
-    # +++your code here+++
-    return
-
+    counter = 0
+    for i in words:
+        word = i
+        if len(word) >= 2 and word[0] == word[-1]:
+            counter += 1
+    return counter
+        
 
 # B. front_x
 # Given a list of strings, return a list with the strings
@@ -28,7 +32,18 @@ def match_ends(words):
 
 def front_x(words):
     # +++your code here+++
-    return
+    list_one = []
+    list_two = []
+    for i in words:
+        word = i
+        if word[0] == "x":
+            list_one.insert(0, word)
+        else: 
+            list_two.insert(0, word)
+    sorted_1 = sorted(list_one)
+    sorted_2 = sorted(list_two)
+    final_list = list_one + list_two
+    return final_list
 
 
 # C. sort_last
@@ -40,7 +55,11 @@ def front_x(words):
 
 def sort_last(tuples):
     # +++your code here+++
-    return
+    def myfunc(i):
+        return i[-1]
+    def sort(tuples):
+        return sorted(tuples, key=myfunc)
+    return sort(tuples)
 
 
 # Simple provided test() function used in main() to print
